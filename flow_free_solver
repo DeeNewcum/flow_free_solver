@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+
+    use strict;
+    use warnings;
+
+    # FindBin replacement
+    use Cwd 'abs_path';
+    use File::Basename;
+    use lib dirname( abs_path $0 );
+
+    use Board;
+    use Constraints;
+
+    use Data::Dumper;
+
+my $board_filename = shift;
+if (!@ARGV) {
+    #$board_filename = "boards/regular_pack--1.1";      # debugging only
+}
+my $b = Board->load($board_filename);
+
+$b->pretty_print();
+
+while (1) {
+    last unless Constraints::check_all_constraints($b);
+    $b->pretty_print();
+}
+$b->pretty_print();
