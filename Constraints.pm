@@ -1,5 +1,8 @@
 package Constraints;
 
+# Relatively straightfoward moves, that don't require any tree searching.
+
+
 
 # returns true to indicate that some move was made, false to indicate no move was made,
 #       and -1 to indicate that the board is now in an invalid state

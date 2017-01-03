@@ -1,6 +1,10 @@
 - start writing some of the tree search with backtrack
+
+        - I can use AI::Pathfinding::AStar or Graph::Implicit's astar()
+
         - in particular, write the wall-following heuristic
             - see if this will let me solve some of these boards:
                     6x6_mania--4
                     7x7_mania--2
                     7x7_mania--4
+

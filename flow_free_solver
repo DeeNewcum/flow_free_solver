@@ -17,6 +17,9 @@ my $board_filename = shift;
 if (!@ARGV) {
     #$board_filename = "boards/regular_pack--1.1";      # debugging only
 }
+if (!$board_filename || !-e $board_filename) {
+    die "Specify a filename.\n";
+}
 my $b = Board->load($board_filename);
 
 $b->pretty_print();
